@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +24,24 @@ namespace Tugas_Taxi
 
         public void PickUpPassenger()
         {
-            Console.WriteLine("{0} sedang menjemput penumpang", DriverName);
+            if (OnDuty)
+            {
+                Console.WriteLine("{0} sedang menjemput penumpang", DriverName);
+            } else
+            {
+                Console.WriteLine("{0} tidak sedang menjemput penumpang", DriverName);
+            }
         }
 
         public void DropOffPassenger()
         {
-            Console.WriteLine("{0} selesai mengantar penumpang", DriverName);
+            if (NumPassenger!=0)
+            {
+                Console.WriteLine("{0} selesai mengantar penumpang", DriverName);
+            } else
+            {
+                Console.WriteLine("{0} belum selesai mengantar penumpang", DriverName);
+            }
         }
 
     }
