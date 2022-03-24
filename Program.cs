@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,18 +11,32 @@ namespace Tugas_Taxi
         static void Main(string[] args)
         {
             //membuat objek taxi
-            Taxi taxi = new Taxi();
+            Taxi taxi1 = new Taxi();
+            Taxi taxi2 = new Taxi();
 
             //pemanggilan properties
-            taxi.DriverName = "Jono";
-            taxi.OnDuty = true;
-            taxi.NumPassenger = 10;
+            taxi1.DriverName = "Jono";
+            taxi1.OnDuty = true;
+            taxi1.NumPassenger = 10;
 
             //pemanggilan method
-            taxi.TaxiInfo();
+            taxi1.TaxiInfo();
             Console.WriteLine();
-            taxi.PickUpPassenger();
-            taxi.DropOffPassenger();
+            taxi1.PickUpPassenger();
+            taxi1.DropOffPassenger();
+
+            //pemanggilan properties
+            taxi2.DriverName = "Supri";
+            taxi2.OnDuty = false;
+            taxi2.NumPassenger = 0;
+
+            Console.WriteLine("\n--------------------------------------------------------------------\n");
+
+            //pemanggilan method
+            taxi2.TaxiInfo();
+            Console.WriteLine();
+            taxi2.PickUpPassenger();
+            taxi2.DropOffPassenger();
 
             Console.ReadKey();
         }
